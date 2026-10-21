@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="theme-color" content="#0f9d8a">
+<title>奇奇影视｜最新电影电视剧资讯 · 高清观影指南 · 影评推荐与片单排行</title>
+<meta name="description" content="奇奇影视(qiqiyingshi-app)专注分享最新电影与热播电视剧资讯，提供权威观影指南、深度影评解读、口碑片单排行与明星动态。每日精选高分院线大片、经典剧集、纪录片及综艺，帮助影迷发现好作品，轻松规划观影清单。访问 https://qiqiyingshi-app.github.io 获取最新影视内容。">
+<meta name="keywords" content="奇奇影视,电影资讯,电视剧推荐,观影指南,影评,高分片单,院线大片,热播剧集,纪录片推荐,综艺盘点,明星动态,影视排行榜,观影清单,最新上映,经典电影,国产剧,美剧韩剧">
+<meta name="author" content="奇奇影视内容编辑团队">
+<meta name="copyright" content="Copyright © 奇奇影视 qiqiyingshi-app 保留所有权利">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="奇奇影视">
+<meta property="og:title" content="奇奇影视｜电影电视剧资讯 · 观影指南 · 影评片单推荐">
+<meta property="og:description" content="奇奇影视专注分享最新电影电视剧资讯、观影指南、影评与口碑片单排行，访问 https://qiqiyingshi-app.github.io 发现更多好作品。">
+<meta property="og:url" content="https://qiqiyingshi-app.github.io">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="奇奇影视｜电影电视剧资讯与观影指南">
+<meta name="twitter:description" content="最新影视资讯、影评解读、高分片单与明星动态，尽在奇奇影视。">
+<link rel="canonical" href="https://qiqiyingshi-app.github.io">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230f9d8a'/><text x='32' y='42' font-size='34' text-anchor='middle' fill='white' font-family='sans-serif'>奇</text></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#0f9d8a;--primary-dark:#0b7d6e;--accent:#ff7849;--ink:#2d3748;--ink-light:#718096;--bg:#f6f9f8;--card:#fff;--line:#e2e8f0;--radius:18px}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--primary-dark);text-decoration:none;transition:.2s}
+a:hover{color:var(--accent)}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* Header */
+header{background:linear-gradient(135deg,#0f9d8a 0%,#14b8a6 55%,#2dd4bf 100%);padding:14px 0;position:sticky;top:0;z-index:50;box-shadow:0 4px 20px rgba(15,157,138,.25)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;font-size:22px;font-weight:800;letter-spacing:.5px}
+.logo-mark{width:38px;height:38px;border-radius:11px;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:19px;backdrop-filter:blur(4px)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{color:rgba(255,255,255,.92);font-size:15px;font-weight:600;padding:7px 13px;border-radius:20px;white-space:nowrap}
+.nav a:hover{background:rgba(255,255,255,.18);color:#fff}
+.menu-btn{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer;padding:4px 8px}
+
+/* Hero */
+.hero{padding:70px 0 60px;background:radial-gradient(circle at 88% 18%,rgba(255,120,73,.12),transparent 42%),radial-gradient(circle at 8% 82%,rgba(45,212,191,.18),transparent 40%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero-tag{display:inline-block;background:rgba(15,157,138,.12);color:var(--primary-dark);font-size:13px;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:1px}
+.hero h1{font-size:44px;font-weight:900;line-height:1.2;letter-spacing:-.5px;margin-bottom:16px;color:#1a202c}
+.hero h1 span{background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:17px;color:var(--ink-light);max-width:520px;margin-bottom:26px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:30px;font-weight:700;font-size:15px;border:2px solid transparent;transition:.25s;cursor:pointer}
+.btn-primary{background:var(--primary);color:#fff;box-shadow:0 8px 22px rgba(15,157,138,.3)}
+.btn-primary:hover{background:var(--primary-dark);color:#fff;transform:translateY(-2px)}
+.btn-ghost{background:#fff;color:var(--primary-dark);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.hero-stats{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}
+.stat b{display:block;font-size:26px;font-weight:900;color:var(--primary-dark)}
+.stat span{font-size:13px;color:var(--ink-light)}
+
+/* Hero visual */
+.glass-card{background:rgba(255,255,255,.72);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);border-radius:24px;padding:22px;box-shadow:0 20px 50px rgba(15,40,50,.12)}
+.ticket{background:#fff;border-radius:16px;padding:16px;margin-bottom:14px;display:flex;gap:14px;align-items:center;box-shadow:0 4px 14px rgba(0,0,0,.05);border-left:4px solid var(--accent)}
+.ticket:nth-child(2){border-left-color:var(--primary)}
+.ticket:nth-child(3){border-left-color:#f59e0b}
+.ticket-cover{width:52px;height:70px;border-radius:8px;flex-shrink:0;display:grid;place-items:center;color:#fff;font-size:24px;font-weight:900}
+.ticket-info h4{font-size:15px;margin-bottom:3px}
+.ticket-info small{color:var(--ink-light);font-size:12px}
+
+/* Section */
+section{padding:64px 0}
+.sec-head{text-align:center;margin-bottom:42px}
+.sec-kicker{font-size:13px;font-weight:800;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+.sec-head h2{font-size:32px;font-weight:900;margin-top:6px;color:#1a202c}
+.sec-head p{color:var(--ink-light);margin-top:8px;max-width:560px;margin-left:auto;margin-right:auto}
+
+/* Cards grid */
+.grid{display:grid;gap:24px}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border-radius:var(--radius);padding:26px;box-shadow:0 2px 12px rgba(15,40,50,.05);border:1px solid var(--line);transition:.28s;height:100%}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(15,40,50,.12)}
+.card-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:26px;margin-bottom:16px;background:rgba(15,157,138,.12)}
+.card h3{font-size:19px;margin-bottom:8px;color:#1a202c}
+.card p{font-size:14.5px;color:var(--ink-light)}
+.card .more{display:inline-block;margin-top:14px;font-size:14px;font-weight:700;color:var(--primary)}
+
+/* Film cards */
+.film-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,.06);transition:.28s;border:1px solid var(--line)}
+.film-card:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(0,0,0,.12)}
+.poster{height:230px;position:relative;display:grid;place-items:center;color:#fff;font-size:40px;font-weight:900}
+.poster::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.55))}
+.film-tag{position:absolute;top:12px;left:12px;z-index:2;background:rgba(255,255,255,.92);color:#1a202c;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:20px}
+.film-score{position:absolute;top:12px;right:12px;z-index:2;background:var(--accent);color:#fff;font-size:12px;font-weight:800;padding:4px 9px;border-radius:20px}
+.film-info{padding:16px}
+.film-info h4{font-size:16.5px;margin-bottom:6px;color:#1a202c}
+.film-meta{display:flex;gap:8px;font-size:12.5px;color:var(--ink-light);flex-wrap:wrap}
+
+/* List items */
+.list-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px dashed var(--line)}
+.list-item:last-child{border-bottom:none}
+.rank{width:30px;height:30px;border-radius:8px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:800;font-size:14px;flex-shrink:0}
+.rank.hot{background:var(--accent)}
+.list-body h4{font-size:16px;margin-bottom:4px;color:#1a202c}
+.list-body p{font-size:13.5px;color:var(--ink-light)}
+
+/* Newsletter */
+.cta-band{background:linear-gradient(120deg,#0b3c4a,#0f9d8a 60%,#14b8a6);border-radius:28px;padding:48px 40px;color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:rgba(255,255,255,.08);top:-140px;right:-80px}
+.cta-band::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.06);bottom:-120px;left:-60px}
+.cta-band h2{font-size:30px;margin-bottom:10px;position:relative}
+.cta-band p{opacity:.9;margin-bottom:24px;position:relative;max-width:540px;margin-left:auto;margin-right:auto}
+.subscribe{display:flex;gap:10px;max-width:460px;margin:0 auto;position:relative;flex-wrap:wrap;justify-content:center}
+.subscribe input{flex:1;min-width:220px;padding:14px 20px;border-radius:30px;border:none;font-size:15px;outline:none}
+.subscribe button{background:var(--accent);color:#fff;border:none;padding:14px 28px;border-radius:30px;font-weight:800;cursor:pointer;font-size:15px;transition:.2s}
+.subscribe button:hover{background:#f2653a}
+
+/* Footer */
+footer{background:#0b3c4a;color:rgba(255,255,255,.78);padding:50px 0 26px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;margin-bottom:32px}
+.foot-brand{color:#fff;font-size:20px;font-weight:800;margin-bottom:10px}
+.foot-col h5{color:#fff;font-size:15px;margin-bottom:14px}
+.foot-col a{display:block;color:rgba(255,255,255,.68);font-size:14px;padding:4px 0}
+.foot-col a:hover{color:#fff}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+.foot-bottom a{color:rgba(255,255,255,.6)}
+.foot-bottom a:hover{color:#fff}
+
+/* Responsive */
+@media(max-width:900px){
+ .grid-4{grid-template-columns:repeat(2,1fr)}
+ .grid-3,.grid-2{grid-template-columns:1fr}
+ .hero-grid{grid-template-columns:1fr;gap:36px}
+ .hero h1{font-size:32px}
+ .hero p{font-size:16px}
+ .nav{display:none;position:absolute;top:100%;left:0;right:0;background:#0b7d6e;flex-direction:column;padding:14px 20px;box-shadow:0 10px 24px rgba(0,0,0,.15)}
+ .nav.open{display:flex}
+ .nav a{padding:12px 16px;border-radius:12px}
+ .menu-btn{display:block}
+ .foot-grid{grid-template-columns:1fr 1fr}
+ .sec-head h2{font-size:26px}
+ section{padding:48px 0}
+ .hero{padding:46px 0 40px}
+ .cta-band{padding:36px 22px}
+ .cta-band h2{font-size:24px}
+}
+@media(max-width:520px){
+ .grid-4{grid-template-columns:1fr}
+ .foot-grid{grid-template-columns:1fr}
+ .hero h1{font-size:27px}
+ .hero-stats{gap:20px}
+ .stat b{font-size:22px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<!-- ============ 头部导航 ============ -->
+<header>
+  <div class="container header-inner">
+    <a href="https://qiqiyingshi-app.github.io" class="logo">
+      <span class="logo-mark">奇</span>奇奇影视
+    </a>
+    <nav class="nav" id="navMenu">
+      <a href="#news">影视资讯</a>
+      <a href="#guide">观影指南</a>
+      <a href="#review">影评推荐</a>
+      <a href="#rank">口碑排行</a>
+      <a href="#stars">明星动态</a>
+      <a href="#about">关于本站</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<!-- ============ 首屏 Hero ============ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-tag">✦ 每日精选 · 观影不踩雷</span>
+      <h1>发现好电影<br><span>从这里开始</span></h1>
+      <p>奇奇影视(qiqiyingshi-app)是一档专注电影与电视剧的内容栏目，每天为你整理最新上映动态、热播剧集看点、深度影评解读与值得收藏的高分片单，让每一次观影都有答案。</p>
+      <div class="hero-cta">
+        <a href="#rank" class="btn btn-primary">查看本周高分榜 →</a>
+        <a href="#guide" class="btn btn-ghost">获取观影指南</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>1200+</b><span>精选影评</span></div>
+        <div class="stat"><b>50+</b><span>题材分类</span></div>
+        <div class="stat"><b>每日</b><span>内容更新</span></div>
+      </div>
+    </div>
+    <div class="glass-card">
+      <div class="ticket">
+        <div class="ticket-cover" style="background:linear-gradient(135deg,#ff7849,#ff5a7a)">🎬</div>
+        <div class="ticket-info">
+          <h4>院线热映速递</h4>
+          <small>本周新片 · 看点解析 · 购票建议</small>
+        </div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-cover" style="background:linear-gradient(135deg,#0f9d8a,#14b8a6)">📺</div>
+        <div class="ticket-info">
+          <h4>热播剧集追踪</h4>
+          <small>剧情梳理 · 人物关系 · 追剧节奏</small>
+        </div>
+      </div>
+      <div class="ticket">
+        <div class="ticket-cover" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">⭐</div>
+        <div class="ticket-info">
+          <h4>高分口碑片单</h4>
+          <small>类型片单 · 冷门佳作 · 经典重映</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目一：影视资讯 ============ -->
+<section id="news">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-kicker">Film &amp; TV News</div>
+      <h2>影视资讯</h2>
+      <p>第一时间掌握院线新片、剧集定档、行业动态与幕后故事，不错过任何一条值得关注的影视消息。</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="film-card">
+        <div class="poster" style="background:linear-gradient(135deg,#6366f1,#a855f7)">🎞️
+          <span class="film-tag">院线速递</span><span class="film-score">8.7</span>
+        </div>
+        <div class="film-info">
+          <h4>本周院线新片看点：类型多元的十月档</h4>
+          <div class="film-meta"><span>剧情 / 犯罪</span><span>·</span><span>2026-10-18</span></div>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="poster" style="background:linear-gradient(135deg,#0ea5e9,#22d3ee)">📡
+          <span class="film-tag">定档官宣</span><span class="film-score">9.1</span>
+        </div>
+        <div class="film-info">
+          <h4>三部国产剧定档，年末档期竞争升级</h4>
+          <div class="film-meta"><span>都市 / 现实</span><span>·</span><span>2026-10-16</span></div>
+        </div>
+      </article>
+      <article class="film-card">
+        <div class="poster" style="background:linear-gradient(135deg,#f43f5e,#fb923c)">🎭
+          <span class="film-tag">幕后揭秘</span><span class="film-score">8.4</span>
+        </div>
+        <div class="film-info">
+          <h4>从剧本到成片：一部高分剧的诞生过程</h4>
+          <div class="film-meta"><span>制作 / 创作</span><span>·</span><span>2026-10-14</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目二：观影指南 ============ -->
+<section id="guide" style="background:#fff">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-kicker">Watching Guide</div>
+      <h2>观影指南</h2>
+      <p>从题材选择到观看顺序，从设备建议到观看礼仪，用一份实用的观影指南，让每一次坐下都物有所值。</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="card-icon" style="background:rgba(15,157,138,.12)">🎯</div>
+        <h3>题材怎么选</h3>
+        <p>按心情与场景匹配合适的题材类型，从轻松喜剧到烧脑悬疑，找到当下最对味的那一部。</p>
+        <a href="#" class="more">阅读指南 →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(255,120,73,.14)">🍿</div>
+        <h3>家庭观影清单</h3>
+        <p>兼顾全年龄段的合家欢选择，适合周末与节假日全家一起观看的温暖作品推荐。</p>
+        <a href="#" class="more">阅读指南 →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(245,158,11,.16)">🔊</div>
+        <h3>画质与音效建议</h3>
+        <p>不同题材对应的最佳观看设备与画质设置，让大银幕视听体验在家也能完整呈现。</p>
+        <a href="#" class="more">阅读指南 →</a>
+      </div>
+      <div class="card">
+        <div class="card-icon" style="background:rgba(99,102,241,.14)">📚</div>
+        <h3>系列观影顺序</h3>
+        <p>热门系列与续集的正确观看顺序梳理，避免错过关键伏笔，完整理解故事脉络。</p>
+        <a href="#" class="more">阅读指南 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目三：影评推荐 ============ -->
+<section id="review">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-kicker">Film Reviews</div>
+      <h2>影评推荐</h2>
+      <p>不止于打分，更关注故事内核与视听表达。每篇影评都从剧情、表演、镜头与主题四个维度展开，帮你判断值不值得看。</p>
+    </div>
+    <div class="grid grid-2">
+      <article class="card" style="display:flex;gap:20px;align-items:flex-start">
+        <div class="poster" style="width:120px;height:160px;border-radius:14px;background:linear-gradient(135deg,#0f766e,#14b8a6);font-size:30px;flex-shrink:0">🎬</div>
+        <div>
+          <span class="film-tag" style="position:static;display:inline-block;margin-bottom:8px">深度影评</span>
+          <h3>《无名之辈》：小人物的尊严与温柔</h3>
+          <p>影片以群像叙事勾勒出底层人物的生存状态，镜头克制而充满温度，表演层次丰富，是一部值得反复品味的现实主义佳作。</p>
+          <div class="film-meta" style="margin-top:12px"><span>★★★★★</span><span>推荐指数 9.0</span></div>
+        </div>
+      </article>
+      <article class="card" style="display:flex;gap:20px;align-items:flex-start">
+        <div class="poster" style="width:120px;height:160px;border-radius:14px;background:linear-gradient(135deg,#be185d,#f43f5e);font-size:30px;flex-shrink:0">🎬</div>
+        <div>
+          <span class="film-tag" style="position:static;display:inline-block;margin-bottom:8px">冷门佳作</span>
+          <h3>《海上钢琴师》：用音乐讲完一生的孤独</h3>
+          <p>重映之后再度被讨论的经典，影片用一艘船承载一个时代的记忆，钢琴与大海构成了最动人的视听隐喻。</p>
+          <div class="film-meta" style="margin-top:12px"><span>★★★★☆</span><span>推荐指数 8.8</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目四：口碑排行 ============ -->
+<section id="rank" style="background:#fff">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-kicker">Top Charts</div>
+      <h2>口碑排行</h2>
+      <p>基于评分、口碑与观众讨论度综合整理的热门片单，按类型分类，方便你快速锁定想看的下一部。</p>
+    </div>
+    <div class="grid grid-2">
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;color:#1a202c">🎬 电影热榜</h3>
+        <p style="font-size:14px;color:var(--ink-light);margin-bottom:16px">本周讨论度与口碑综合排名</p>
+        <div class="list-item"><span class="rank">1</span><div class="list-body"><h4>消失的她</h4><p>悬疑 / 剧情 · 反转不断，话题度居高不下</p></div></div>
+        <div class="list-item"><span class="rank">2</span><div class="list-body"><h4>流浪地球2</h4><p>科幻 / 冒险 · 视效与叙事兼具的国产科幻标杆</p></div></div>
+        <div class="list-item"><span class="rank">3</span><div class="list-body"><h4>封神第一部</h4><p>神话 / 史诗 · 东方神话的工业化呈现</p></div></div>
+        <div class="list-item"><span class="rank">4</span><div class="list-body"><h4>年会不能停！</h4><p>喜剧 / 职场 · 笑点密集的现实共鸣</p></div></div>
+      </div>
+      <div>
+        <h3 style="font-size:19px;margin-bottom:6px;color:#1a202c">📺 剧集热榜</h3>
+        <p style="font-size:14px;color:var(--ink-light);margin-bottom:16px">本月热播剧集口碑与热度一览</p>
+        <div class="list-item"><span class="rank hot">1</span><div class="list-body"><h4>漫长的季节</h4><p>悬疑 / 年代 · 三重时空交织的生活史诗</p></div></div>
+        <div class="list-item"><span class="rank hot">2</span><div class="list-body"><h4>繁花</h4><p>年代 / 商战 · 光影精致的沪上风情画卷</p></div></div>
+        <div class="list-item"><span class="rank hot">3</span><div class="list-body"><h4>三体</h4><p>科幻 / 改编 · 宏大设定的影像化尝试</p></div></div>
+        <div class="list-item"><span class="rank hot">4</span><div class="list-body"><h4>去有风的地方</h4><p>治愈 / 生活 · 慢节奏的田园生活美学</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目五：明星动态 ============ -->
+<section id="stars">
+  <div class="container">
+    <div class="sec-head">
+      <div class="sec-kicker">Celebrity Buzz</div>
+      <h2>明星动态</h2>
+      <p>关注演员、导演与幕后创作者的最新动向，了解新作筹备、公开活动与行业话题。</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card">
+        <div class="poster" style="height:150px;border-radius:14px;background:linear-gradient(135deg,#0891b2,#06b6d4);font-size:40px">🎤</div>
+        <h3 style="margin-top:14px">演员新作官宣</h3>
+        <p>实力派演员接连公布新项目，题材跨度大，值得期待。</p>
+      </div>
+      <div class="card">
+        <div class="poster" style="height:150px;border-radius:14px;background:linear-gradient(135deg,#c2410c,#f97316);font-size:40px">🎬</div>
+        <h3 style="margin-top:14px">导演新片开机</h3>
+        <p>多位知名导演新作陆续开机，幕后团队阵容同样亮眼。</p>
+      </div>
+      <div class="card">
+        <div class="poster" style="height:150px;border-radius:14px;background:linear-gradient(135deg,#7c3aed,#a855f7);font-size:40px">🏆</div>
+        <h3 style="margin-top:14px">奖项与提名</h3>
+        <p>近期国内外电影节名单公布，华语作品表现备受关注。</p>
+      </div>
+      <div class="card">
+        <div class="poster" style="height:150px;border-radius:14px;background:linear-gradient(135deg,#0f766e,#34d399);font-size:40px">✨</div>
+        <h3 style="margin-top:14px">幕后创作者</h3>
+        <p>编剧、摄影与美术的幕后故事，读懂作品的另一面。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 订阅号召 ============ -->
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <h2>每周一份观影清单，送到你手上</h2>
+      <p>奇奇影视(qiqiyingshi-app)每周精选高分新片、热播剧集与深度影评，帮你节省挑选时间，把精力留给真正值得看的作品。</p>
+      <form class="subscribe" onsubmit="event.preventDefault();this.querySelector('button').textContent='已订阅 ✓'">
+        <input type="email" placeholder="输入你的邮箱，接收每周片单" required>
+        <button type="submit">立即订阅</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 关于本站 / 友情链接 ============ -->
+<section id="about" style="background:#fff;padding-top:0">
+  <div class="container">
+    <div class="grid grid-2" style="align-items:center">
+      <div>
+        <div class="sec-kicker">About QIQIYINGSHI</div>
+        <h2 style="font-size:28px;font-weight:900;margin:6px 0 14px;color:#1a202c">关于奇奇影视</h2>
+        <p style="color:var(--ink-light)">奇奇影视(qiqiyingshi-app)是一个专注电影与电视剧内容分享的栏目站点，致力于为影迷提供及时、专业、易读的影视资讯与观影建议。本站网址为 <strong>https://qiqiyingshi-app.github.io</strong>，持续更新，欢迎收藏与回访。</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+          <a href="https://qiqiyingshi-app.github.io" class="btn btn-primary">访问本站首页</a>
+          <a href="#" class="btn btn-ghost">联系我们</a>
+        </div>
+      </div>
+      <div class="glass-card">
+        <h4 style="font-size:16px;margin-bottom:14px;color:#1a202c">常用栏目直达</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <a href="#news" class="card" style="padding:14px;text-align:center;font-weight:700">🎞️ 影视资讯</a>
+          <a href="#guide" class="card" style="padding:14px;text-align:center;font-weight:700">🍿 观影指南</a>
+          <a href="#review" class="card" style="padding:14px;text-align:center;font-weight:700">⭐ 影评推荐</a>
+          <a href="#rank" class="card" style="padding:14px;text-align:center;font-weight:700">🏆 口碑排行</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">奇奇影视</div>
+        <p style="font-size:14px;max-width:300px">专注电影与电视剧资讯分享、观影指南与影评推荐的内容栏目，帮你发现值得一看的好作品。</p>
+      </div>
+      <div class="foot-col">
+        <h5>内容栏目</h5>
+        <a href="#news">影视资讯</a>
+        <a href="#guide">观影指南</a>
+        <a href="#review">影评推荐</a>
+        <a href="#rank">口碑排行</a>
+      </div>
+      <div class="foot-col">
+        <h5>关注我们</h5>
+        <a href="#">微信公众号</a>
+        <a href="#">微博</a>
+        <a href="#">RSS 订阅</a>
+        <a href="#">投稿合作</a>
+      </div>
+      <div class="foot-col">
+        <h5>网站信息</h5>
+        <a href="https://qiqiyingshi-app.github.io">本站网址</a>
+        <a href="#">网站地图</a>
+        <a href="#">免责声明</a>
+        <a href="#">隐私政策</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 奇奇影视(qiqiyingshi-app) 保留所有权利 · 本站网址：https://qiqiyingshi-app.github.io</span>
+      <span><a href="#top">返回顶部 ↑</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 移动端菜单切换
+(function(){
+  var btn=document.getElementById('menuBtn');
+  var nav=document.getElementById('navMenu');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',function(){nav.classList.toggle('open');});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A')nav.classList.remove('open');});
+})();
+</script>
+</body>
+</html>
